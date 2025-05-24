@@ -1,0 +1,21 @@
+@startuml
+skinparam actorStyle awesome
+:cliente:
+cliente ----> (Registro de datos): direccion,nombre,etc
+cliente -> (realizar pedido)
+cliente -> (pago realizado)
+
+
+:empleado:
+empleado ----left----> (entregar el pedido)
+empleado ------> (segumiento del pedido)
+empleado ------> (enviar el pedido)
+note top of empleado : (vendedor o repartidor).
+:proveedor:
+proveedor ----right----> (administra inventario)
+proveedor --------> (suminnistra los productos)
+
+
+cliente <|-- empleado
+empleado <|- proveedor
+@enduml
